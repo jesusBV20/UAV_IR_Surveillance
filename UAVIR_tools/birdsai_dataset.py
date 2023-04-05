@@ -14,10 +14,9 @@ def findRemove(str_list, string):
 
 # Clase principal
 class BIRDSAIDataset(torch.utils.data.Dataset):
-  def __init__(self, root, transform = None, len_limit = None):
+  def __init__(self, root, transform = None):
     self.root = root
     self.transform = transform
-    self.len_limit = len_limit
 
     self.images_path = os.path.join(root, "images")
     self.annot_path = os.path.join(root, "annotations")
@@ -39,13 +38,8 @@ class BIRDSAIDataset(torch.utils.data.Dataset):
     self.movies_box_frames = self.getBoxFrames()
 
   def __len__(self):
-    if self.len_limit is None:
-      # La longitud del dataset corresponderá a la suma total de frames (ANOTADOS)
-      return np.sum(self.movies_box_frames)
-    else:
-      # Se puede asignar un tamaño máximo para limitar el número de instancias
-      # al entrenar o evaluar
-      return self.len_limit
+    # La longitud del dataset corresponderá a la suma total de frames (ANOTADOS)
+    return np.sum(self.movies_box_frames)
 
   def __getitem__(self, idx):
     # Calculamos el id de la película
