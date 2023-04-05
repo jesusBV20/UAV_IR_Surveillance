@@ -1,13 +1,17 @@
 # UAV_IR_Surveillance
 En este repositorio se introduce un modelo basado en Faster-RCNN, capaz de detectar animales y humanos en vídeos IR filmados desde UAVs.
 
+TODO: imágen de portada
+
 ## Descargar los datos utilizados para entrenar el modelo
 
-El dataset empleado para entrenar nuestra versión de Faster-RCNN es BIRDSAI. En caso de Linux, los datos se pueden descargar comprimidos con ```curl``` o ```wget``` del repositorio oficial:
+El dataset empleado para entrenar nuestra versión de Faster-RCNN es BIRDSAI. En el caso de Linux, los datos se pueden descargar comprimidos con ```curl``` o ```wget``` del repositorio oficial:
 
 ```
 # TrainReal: "https://lilablobssc.blob.core.windows.net/conservationdrones/v01/conservation_drones_train_real.zip"
 # TestReal:  "https://lilablobssc.blob.core.windows.net/conservationdrones-testset/conservation_drones_test_real.zip"
+
+# TestSim:   "https://lilablobssc.blob.core.windows.net/conservationdrones/v01/conservation_drones_train_simulation.zip"
 ```
 
 Para más información, visitar la documentación oficial del dataset: https://sites.google.com/view/elizabethbondi/dataset
@@ -27,3 +31,7 @@ pip install -r requirements.txt
 ```
 
 Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection .
+
+# Referencias
+
+(WIP)
