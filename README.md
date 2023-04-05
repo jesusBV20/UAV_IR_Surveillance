@@ -11,3 +11,19 @@ El dataset empleado para entrenar nuestra versión de Faster-RCNN es BIRDSAI. En
 ```
 
 Para más información, visitar la documentación oficial del dataset: https://sites.google.com/view/elizabethbondi/dataset
+
+# Paquetes necesarios
+
+Todos los paquetes necesarios, tanto para realizar entrenamiento como para inferencia, se encuentran en ```requirements.txt```. Si el usuario usa el gestor de paquetes ```pip```, la instalación de todos los paquetes se puede automatizar con
+
+```
+make init
+```
+
+o directamente
+
+```
+pip install -r requirements.txt
+```
+
+Este proyecto utila una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection. Dichos scripts dependen de ```pycocotools```, un paquete que, como suele dar algunos problemas al instalarlo con ```pip```, hemos decidido incluirlo (con ciertas adaptaciones) en este repositorio (```UAVIR_tools/detection/pycocotools```).
