@@ -26,4 +26,4 @@ o
 pip install -r requirements.txt
 ```
 
-Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection . Dichos scripts dependen de ```pycocotools```, un paquete que, como suele dar algunos problemas al instalarlo con ```pip```, hemos decidido incluirlo (con ciertas modificaciones) en ```UAVIR_tools/detection/pycocotools```.
+Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection . Dichos scripts dependen de [pycocotools](https://github.com/cocodataset/cocoapi/tree/master/PythonAPI/pycocotools), un paquete que, como suele dar algunos problemas al instalarlo con ```pip```, hemos decidido incluirlo (con ciertas modificaciones) en ```UAVIR_tools/detection/pycocotools```.
