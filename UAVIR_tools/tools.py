@@ -1,11 +1,14 @@
+from torchvision import transforms as T
+from torchvision.utils import draw_bounding_boxes
+
 def imgBoxes(img, boxes, labels):
   if not boxes.tolist():
     return img # No hay "boxes" que dibujar
 
   # Definimos una transformación para convertir PIL 
   # image a Torch tensor (y viceversa)
-  transform_toTensor = pytorch_T.PILToTensor()  
-  transform_toImg = pytorch_T.ToPILImage()
+  transform_toTensor = T.PILToTensor()  
+  transform_toImg = T.ToPILImage()
 
   # Convertimos la PIL image a Torch tensor
   img_tensor = transform_toTensor(img)

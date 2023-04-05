@@ -1,3 +1,7 @@
+import torch
+
+from PIL import Image
+
 # Funciones locales
 def findRemove(str_list, string):
   try:
