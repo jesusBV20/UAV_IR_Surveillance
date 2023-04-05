@@ -3,3 +3,4 @@ matplotlib>=3.7.1
 pandas>=1.4.4
 torch>=2.0.0
 torchvision>=0.15.1
+IPython>=7.34.0
