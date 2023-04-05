@@ -14,16 +14,16 @@ Para más información, visitar la documentación oficial del dataset: https://s
 
 # Paquetes necesarios
 
-Todos los paquetes necesarios, tanto para realizar entrenamiento como para inferencia, se encuentran en ```requirements.txt```. Si el usuario usa el gestor de paquetes ```pip```, la instalación de todos los paquetes se puede automatizar con
+Todos los paquetes necesarios, tanto para entrenamiento como para inferencia, se encuentran en ```requirements.txt```. Si el usuario usa el gestor de paquetes ```pip```, la instalación de todas estas dependencias se puede automatizar con
 
 ```
 make init
 ```
 
-o directamente
+o
 
 ```
 pip install -r requirements.txt
 ```
 
-Este proyecto utila una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection. Dichos scripts dependen de ```pycocotools```, un paquete que, como suele dar algunos problemas al instalarlo con ```pip```, hemos decidido incluirlo (con ciertas adaptaciones) en este repositorio (```UAVIR_tools/detection/pycocotools```).
+Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection . Dichos scripts dependen de ```pycocotools```, un paquete que, como suele dar algunos problemas al instalarlo con ```pip```, hemos decidido incluirlo (con ciertas modificaciones) en ```UAVIR_tools/detection/pycocotools```.
