@@ -1,7 +1,7 @@
 # UAV_IR_Surveillance
 En este repositorio se introduce un modelo basado en Faster-RCNN, capaz de detectar animales y humanos en vídeos IR filmados desde UAVs.
 
-TODO: imágen de portada
+![](https://github.com/jesusBV20/UAV_IR_Surveillance/blob/main/thumnail.png)
 
 ## Descargar los datos utilizados para entrenar el modelo
 
@@ -32,9 +32,9 @@ o
 pip install -r requirements.txt
 ```
 
-Si el usuario además desea de realizar localmente un entrenamiento con GPU de NVIDIA, necesitará instalar la versión 11.7 de CUDA Toolkit: https://developer.nvidia.com/cuda-11-7-0-download-archive .
+Si además se desea realizar localmente un entrenamiento con GPU de NVIDIA, necesitará instalar la versión 11.7 de CUDA Toolkit: https://developer.nvidia.com/cuda-11-7-0-download-archive
 
-Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection .
+Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection
 
 # Referencias
 
