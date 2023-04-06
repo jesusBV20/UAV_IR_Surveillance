@@ -1,7 +1,17 @@
+import os
+import torch 
+
 from torchvision import transforms as T
 from torchvision.utils import draw_bounding_boxes
 
-def imgBoxes(img, boxes, labels):
+def createDir(dir):
+  try:
+    os.mkdir(dir)
+    print("¡Directorio '{}' creado!".format(dir))
+  except:
+    print("¡El directorio '{}' ya existe!".format(dir))
+
+def imgBoxes(img, boxes, labels, scores = None, score_th = 0.5):
   if not boxes.tolist():
     return img # No hay "boxes" que dibujar
 
@@ -12,6 +22,18 @@ def imgBoxes(img, boxes, labels):
 
   # Convertimos la PIL image a Torch tensor
   img_tensor = transform_toTensor(img)
+
+  # Si se ha dado un score, aplicamos el umbral
+  if scores is not None:
+    boxes_mask = torch.ones(len(boxes))
+    labels_mask = torch.ones(len(boxes))
+    for i in range(boxes.shape[0]):
+      if scores[i] < score_th:
+        boxes_mask[i]  = 0
+        labels_mask[i] = 0
+
+    boxes = boxes[boxes_mask == 1]
+    labels = labels[labels_mask == 1] 
 
   # Seleccionamos el color de cada "bounding box" en función de la etiqueta
   colors = []
