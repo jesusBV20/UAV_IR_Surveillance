@@ -1,4 +1,5 @@
 import os
+import re
 import numpy as np
 import pandas as pd
 import torch
@@ -11,6 +12,11 @@ def findRemove(str_list, string):
     str_list.pop(str_list.index(string))
   except:
     pass
+
+def selectIRimages(img_file_names):
+  file_names = [f for f in img_file_names if re.findall(".jpg+", f)]
+  file_names = [f for f in file_names if not re.findall("^rgb+|^seg+", f)]
+  return file_names
 
 # Clase principal
 class BIRDSAIDataset(torch.utils.data.Dataset):
@@ -59,7 +65,7 @@ class BIRDSAIDataset(torch.utils.data.Dataset):
     # - img -----
     # Cargamos la imagen
     movie_path = os.path.join(self.images_path, self.movies_dirs[movie_id])
-    movie_imgs = list(sorted(os.listdir(movie_path)))
+    movie_imgs = list(sorted(selectIRimages(os.listdir(movie_path))))
     findRemove(movie_imgs, '.DS_Store') # eliminamos '.DS_Store'
 
     img_path = movie_imgs[frame]
@@ -120,7 +126,7 @@ class BIRDSAIDataset(torch.utils.data.Dataset):
     # - img -----
     # Cargamos la imagen
     movie_path = os.path.join(self.images_path, self.movies_dirs[movie_id])
-    img_path = list(sorted(os.listdir(movie_path)))[frame]
+    img_path = list(sorted(selectIRimages(os.listdir(movie_path))))[frame]
     img = Image.open(os.path.join(movie_path, img_path)).convert("RGB")
 
     # - target ----
@@ -142,7 +148,7 @@ class BIRDSAIDataset(torch.utils.data.Dataset):
         ymin = annot_data.iloc[i,3]
         ymax = ymin + annot_data.iloc[i,5]
         boxes_list.append([xmin, ymin, xmax, ymax])
-        labels_list.append(annot_data.iloc[i,6])
+        labels_list.append(annot_data.iloc[i,6]+1)
 
     # Convertimos las listas en torch.Tensor
     boxes = torch.as_tensor(boxes_list,  dtype=torch.float32)
@@ -161,7 +167,8 @@ class BIRDSAIDataset(torch.utils.data.Dataset):
   def getFrames(self):
     movie_frames = []
     for i in range(len(self.movies_dirs)):
-      frames = list(sorted(os.listdir(os.path.join(self.images_path, self.movies_dirs[i]))))
+      movie_path = os.path.join(self.images_path, self.movies_dirs[i])
+      frames = list(sorted(selectIRimages(os.listdir(movie_path))))
       findRemove(frames, '.DS_Store')
       movie_frames.append(len(frames))
     return movie_frames

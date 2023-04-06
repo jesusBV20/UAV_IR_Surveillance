@@ -1,3 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# Tmp, output and model folders
+tmp/
+output/
+model/
