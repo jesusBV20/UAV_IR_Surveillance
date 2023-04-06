@@ -8,10 +8,10 @@ TODO: imágen de portada
 El dataset empleado para entrenar nuestra versión de Faster-RCNN es BIRDSAI. En el caso de Linux, los datos se pueden descargar comprimidos con ```curl``` o ```wget``` del repositorio oficial:
 
 ```
-# TrainReal: "https://lilablobssc.blob.core.windows.net/conservationdrones/v01/conservation_drones_train_real.zip"
-# TestReal:  "https://lilablobssc.blob.core.windows.net/conservationdrones-testset/conservation_drones_test_real.zip"
+# TrainReal: "https://storage.googleapis.com/public-datasets-lila/conservationdrones/v01/conservation_drones_train_real.zip"
+# TestReal:  "https://storage.googleapis.com/public-datasets-lila/conservationdrones/v01/conservation_drones_test_real.zip"
 
-# TrainSim:   "https://lilablobssc.blob.core.windows.net/conservationdrones/v01/conservation_drones_train_simulation.zip"
+# TrainSim:   "https://storage.googleapis.com/public-datasets-lila/conservationdrones/v01/conservation_drones_train_simulation.zip"
 ```
 
 Es importante destacar que el conjuntos de datos generado de forma sintética cuenta también con imágenes RGB y con máscaras de segmentación, tanto en formato ```.png``` como ```.jpg```. En este proyecto únicamente vamos a trabajar con imágenes en formato ```.jpg```.
