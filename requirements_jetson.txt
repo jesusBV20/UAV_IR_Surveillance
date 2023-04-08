@@ -1,0 +1,8 @@
+###### Requirements for JetPack 4.6 (L4T R32.6.1) ######
+numpy == 1.19.4
+pandas == 1.1.5
+matplotlib == 3.3.4
+tqdm == 4.40.4
+
+torch == 1.10.0
+torchvision == 0.11.1

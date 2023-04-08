@@ -1,9 +1,10 @@
-numpy>=1.22.4
-matplotlib>=3.7.1
-pandas>=1.4.4
-torch>=2.0.0+cu117  # Versión de PyTorch para CUDA 11.7!!
-torchvision>=0.15.1
-IPython>=7.34.0
+###### Requirements for CUDA 11.7 ######
+numpy >= 1.22.4
+matplotlib >= 3.7.1
+pandas >= 1.4.4
+torch >= 2.0.0+cu117
+torchvision >= 0.15.1
+IPython >= 7.34.0
+tqdm >= 4.40.4
 
-tqdm
 moviepy
