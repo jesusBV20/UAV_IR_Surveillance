@@ -126,8 +126,6 @@ def genMovie(movie_id, dataset, model = None, score_th = None,
   else:
     movie_frame_init, movie_frame_end, n_frames = dataset.getMovieInfo(movie_id)
 
-  print(movie_frame_init, movie_frame_end, n_frames)
-
   if end_frame is not None:
     if (end_frame < n_frames):
       movie_frame_end = movie_frame_init + end_frame
