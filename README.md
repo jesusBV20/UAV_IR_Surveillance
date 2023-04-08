@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 Si además se desea realizar localmente un entrenamiento con GPU de NVIDIA, necesitará instalar la versión 11.7 de CUDA Toolkit: https://developer.nvidia.com/cuda-11-7-0-download-archive
 
-En caso de que el usuario busque realizar inferencia sobre dispositivos como NVIDIA Jetson Nano, recomendamos utilizar ```[l4t-ml](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-ml)```, el contenedor oficial de NVIDIA para Machine Learning que contiene las últimas versiones de JetPack.
+En caso de que el usuario busque realizar inferencia en dispositivos que funcionen con NVIDIA JetPack, en ```requirements_jetson.txt``` se encuentran los paquetes necesarios en sus versiones compatibles con JetPack 4.6 (L4T R32.6.1). **!IMPORTANTE¡** Se requieren al menos 3GB de RAM para poder cargar la versión original de Fast-RCNN en memoria, se ha comprobado que la Jetson Nano de 2GB es incapaz de realizar una inferencia.
 
 Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection
 

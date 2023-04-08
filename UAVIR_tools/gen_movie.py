@@ -18,7 +18,7 @@ OUTPUT_MOVIE_PATH = "output"
 """
 Generación de un vídeo basado en las imágenes y anotaciones de dataset.
 """
-def genMovie(movie_id, dataset, model = None, score_th = None,
+def genMovie(movie_id, dataset, model = None, score_th = None, device = None,
              figsize = FIGSIZE, res = RES, init_frame = None, end_frame = None,
              output_imgs_path = OUTPUT_IMGS_PATH,
              output_movie_path = OUTPUT_MOVIE_PATH):
@@ -32,8 +32,9 @@ def genMovie(movie_id, dataset, model = None, score_th = None,
 
   ## Renderizamos todos los frames (imágen original con las anotaciones) ##
   if model is not None:
-    # Si se encuentra disponible, seleccionamos GPU como dispositivo para entrenar
-    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+    if device is None:
+      # Si se encuentra disponible, seleccionamos GPU como dispositivo para entrenar
+      device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     print("Device: {}\n".format(device))
     model.to(device)
     model = model.eval()
