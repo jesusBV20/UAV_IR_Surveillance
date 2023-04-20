@@ -36,6 +36,6 @@ Si además se desea realizar localmente un entrenamiento con GPU de NVIDIA, nece
 
 En caso de que el usuario busque realizar inferencia en dispositivos que funcionen con NVIDIA JetPack, en ```requirements_jetson.txt``` se encuentran los paquetes necesarios en sus versiones compatibles con JetPack 4.6 (L4T R32.6.1). En caso de contar con una versión distinta a la 4.6, recomendamos revisar el siguiente enlace: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch.
 
-**!IMPORTANTE¡** Se requieren al menos 4GB de RAM para poder cargar la versión original de Fast-RCNN en memoria, se ha comprobado que la Jetson Nano de 2GB es incapaz de realizar una inferencia.
+**¡IMPORTANTE!** Se requieren al menos 4GB de RAM para poder cargar la versión original de Fast-RCNN en memoria, se ha comprobado que la Jetson Nano de 2GB es incapaz de realizar una inferencia.
 
 Este proyecto utiliza una serie de scripts (situados en ```UAVIR_tools/detection```) que han sido adaptados del repositorio oficial de pytorchvision: https://github.com/pytorch/vision/tree/main/references/detection
