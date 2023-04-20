@@ -3,6 +3,3 @@ numpy == 1.19.4
 pandas == 1.1.5
 matplotlib == 3.3.4    # Instalar libfreetype6-dev: https://github.com/matplotlib/matplotlib/issues/16027
 tqdm == 4.40.4
-
-torch == 1.10.0        # Se recomienda consultar: https://qengineering.eu/install-pytorch-on-jetson-nano.html
-torchvision == 0.11.1  # Tiene que ser compatible con torch: https://github.com/pytorch/vision#installation
